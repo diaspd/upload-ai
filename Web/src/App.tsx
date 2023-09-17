@@ -10,6 +10,7 @@ import { Label } from "./components/ui/label";
 import { Lightbulb, Wand2 } from "lucide-react";
 import { VideoInputForm } from "./components/video-input-form";
 import { useTheme } from "./components/theme-provider";
+import { PromptSelect } from "./components/prompt-select";
 
 
 export function App() {
@@ -69,15 +70,8 @@ export function App() {
           <form className="space-y-6">
             <div className="space-y-2">
               <Label>Prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="title">Título do YouTube</SelectItem>
-                  <SelectItem value="description">Descrição do YouTube</SelectItem>
-                </SelectContent>
-              </Select>
+
+              <PromptSelect />
             </div>
 
             <div className="space-y-2">
