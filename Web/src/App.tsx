@@ -13,6 +13,8 @@ import { VideoInputForm } from "./components/video-input-form";
 import { useTheme } from "./components/theme-provider";
 import { PromptSelect } from "./components/prompt-select";
 
+import { useCompletion } from 'ai/react'
+
 
 export function App() {
   const { theme, setTheme } = useTheme()
@@ -22,6 +24,24 @@ export function App() {
   function handlePromptSelected(template: string) {
     console.log(template)
   }
+
+  const { 
+    input, 
+    setInput, 
+    handleInputChange,
+    handleSubmit, 
+    completion,
+    isLoading
+  } = useCompletion({
+    api: 'http://localhost:3333/ai/complete',
+    body: {
+      videoId,
+      temperature
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
 
   return (
    <div className="min-h-screen flex flex-col">
@@ -49,11 +69,14 @@ export function App() {
           <Textarea 
             placeholder="Inclua o prompt para a IA..." 
             className="p-4 resize-none leading-relaxed"
+            value={input}
+            onChange={handleInputChange}
           />
           <Textarea 
             placeholder="Resultado gerado pela IA..." 
             className="p-4 resize-none leading-relaxed"
             readOnly
+            value={completion}
           />
         </div>
 
@@ -74,11 +97,11 @@ export function App() {
 
         <Separator />
 
-          <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label>Prompt</Label>
 
-              <PromptSelect onPromptSelected={handlePromptSelected}/>
+              <PromptSelect onPromptSelected={setInput}/>
             </div>
 
             <div className="space-y-2">
@@ -114,11 +137,11 @@ export function App() {
 
             <Separator />
 
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" disabled={isLoading}>
               Executar
               <Wand2 className="w-4 h-4 ml-2" />
             </Button>
-          </form>
+        </form>
       </aside>
     </main>
    </div>
