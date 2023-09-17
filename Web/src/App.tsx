@@ -54,7 +54,7 @@ export function App() {
 
         <Button variant="outline">
           <GitHubLogoIcon className="h-4 w-4 mr-2"/>
-          Github
+          <a href="https://github.com/diaspd" target="_blank">Github</a> 
         </Button>
       </div>
     </header>
