@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { Button } from "./components/ui/button";
@@ -15,6 +16,12 @@ import { PromptSelect } from "./components/prompt-select";
 
 export function App() {
   const { theme, setTheme } = useTheme()
+  const [temperature, setTemperature] = useState(0.5)
+  const [videoId, setVideoId] = useState<string | null>(null)
+
+  function handlePromptSelected(template: string) {
+    console.log(template)
+  }
 
   return (
    <div className="min-h-screen flex flex-col">
@@ -63,7 +70,7 @@ export function App() {
     
       <aside className="w-80 space-y-6 min-w-min">
 
-        <VideoInputForm />
+        <VideoInputForm onVideoUploaded={setVideoId} />
 
         <Separator />
 
@@ -71,7 +78,7 @@ export function App() {
             <div className="space-y-2">
               <Label>Prompt</Label>
 
-              <PromptSelect />
+              <PromptSelect onPromptSelected={handlePromptSelected}/>
             </div>
 
             <div className="space-y-2">
@@ -97,6 +104,8 @@ export function App() {
                 min={0}
                 max={1}
                 step={0.1}
+                value={[temperature]}
+                onValueChange={value => setTemperature(value[0])}
               />
               <span className="block text-sm text-muted-foreground italic leading-relaxed">
                 Valores mais altor tendem a deixar o resultado mais criativo e com possíveis erros.
