@@ -7,17 +7,24 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Slider } from "./components/ui/slider";
 import { Label } from "./components/ui/label";
 
-import { FileVideo, Lightbulb, Upload, Wand2 } from "lucide-react";
+import { Lightbulb, Wand2 } from "lucide-react";
+import { VideoInputForm } from "./components/video-input-form";
+import { useTheme } from "./components/theme-provider";
 
 
 export function App() {
+  const { theme, setTheme } = useTheme()
+
   return (
    <div className="min-h-screen flex flex-col">
     <header className="px-6 py-3 flex items-center justify-between border-b">
       <h1 className="text-xl font-bold">upload.ai</h1>
 
       <div className="flex items-center gap-3">
-        <Button variant="ghost" className="whitespace-nowrap">light theme</Button>
+        { theme == "dark" ? 
+          <Button variant="ghost" className="whitespace-nowrap" onClick={() => setTheme("light")}>light theme</Button> : 
+          <Button variant="ghost" className="whitespace-nowrap" onClick={() => setTheme("dark")}>dark theme</Button> 
+        }
 
         <Separator orientation="vertical" className="h-8"/>
 
@@ -54,35 +61,8 @@ export function App() {
       </div>
     
       <aside className="w-80 space-y-6 min-w-min">
-        <form className="space-y-6">
-          <label 
-            htmlFor="video"
-            className="border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
-          >
-            <FileVideo className="h-4 w-4"/>
-            Selecione um vídeo
-          </label>
 
-          <input type="file" id="video" accept="video/mp4" className="sr-only"/>
-        
-          <Separator />
-
-          <div className="space-y-2">
-            <Label htmlFor="transcription_prompt">
-              Prompt de transcrição
-            </Label>
-            <Textarea 
-              id="transcription_prompt" 
-              className="h-20 leading-relaxed resize-none" 
-              placeholder="Inclua palavras-chave mencionadas no vídeo separadas por vírgula (,)"
-            />
-          </div>
-
-          <Button type="submit" className="w-full">
-            Carregar vídeo
-            <Upload className="w-4 h-4 ml-2"/>
-          </Button>
-        </form>
+        <VideoInputForm />
 
         <Separator />
 
