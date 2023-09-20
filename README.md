@@ -25,7 +25,7 @@ Clone the project and access the folder.
 ### Web
 
 ```bash
-$ git clone https://github.com/diaspd/
+$ git clone https://github.com/diaspd/upload-ai.git
 $ cd Web
 
 # Install the dependencies
@@ -37,7 +37,7 @@ $ npm run dev
 ```
 </br>
 
-The app will be available on ``
+The app will be available on `http://localhost:5173/`
 
 ### API
 
