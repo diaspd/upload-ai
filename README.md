@@ -22,26 +22,39 @@
 
 Clone the project and access the folder.
 
-```bash
-$ git 
-$ cd 
-```
-
-## Installation
+### Web
 
 ```bash
+$ git clone https://github.com/diaspd/
+$ cd Web
+
+# Install the dependencies
 $ npm install
-```
 
-## Running the app
-
-```bash
+# Start the application
 $ npm run dev
-```
 
+```
 </br>
 
 The app will be available on ``
+
+### API
+
+```bash
+$ cd server
+
+# Install the dependencies
+$ npm install
+
+# Make a copy of to '.env.local'
+# Add OPENAI_KEY="use_your_openai_key_here"
+
+# Start the server
+$ npm run dev
+````
+
+The server will be available on ``
 
 <br>
 </br>
