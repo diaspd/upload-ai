@@ -42,7 +42,7 @@ The app will be available on `http://localhost:5173`
 ### API
 
 ```bash
-$ cd server
+$ cd API
 
 # Install the dependencies
 $ npm install
