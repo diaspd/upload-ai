@@ -64,6 +64,7 @@ The server will be available on `http://localhost:3333/`
 This project was developed with the following technologies:
 <b>
 - OpenAI
+- React
 </b>
 
 </br>
