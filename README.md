@@ -67,6 +67,7 @@ This project was developed with the following technologies:
 - React
 - NodeJs
 - Typescript
+- ShadcnUI
 </b>
 
 </br>
