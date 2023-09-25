@@ -65,6 +65,7 @@ This project was developed with the following technologies:
 <b>
 - OpenAI
 - React
+- NodeJs
 </b>
 
 </br>
