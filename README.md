@@ -73,7 +73,7 @@ This project was developed with the following technologies:
 </br>
 
 ## 📄 Project
-💰 A project that transcribes a video into audio, and then a description or title can be generated for the video using OpenAI API, reactjs, node.js etc.
+💰 A project that transcribes a video into audio, and then a description or title can be generated for the video using OpenAI API, reactjs, node.js and more.
 
 <br></br>
 
