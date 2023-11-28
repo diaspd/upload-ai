@@ -54,7 +54,7 @@ $ npm install
 $ npm run dev
 ````
 
-The server will be available on `http://localhost:3333/`
+The server will be available on `http://localhost:3333/` </br>
 To test server you can use the file `routes.http`
 
 <br>
