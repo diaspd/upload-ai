@@ -55,7 +55,12 @@ $ npm run dev
 ````
 
 The server will be available on `http://localhost:3333/` </br>
-To test server you can use the file `routes.http`
+
+<h2>Methods: </h2>
+
+```
+You can make your requests on file 'routes.http'
+```
 
 <br>
 </br>
