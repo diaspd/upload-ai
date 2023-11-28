@@ -47,7 +47,7 @@ $ cd API
 # Install the dependencies
 $ npm install
 
-# Make a copy of to '.env.local'
+# Create a file '.env.local'
 # Add OPENAI_KEY="use_your_openai_key_here"
 
 # Start the server
