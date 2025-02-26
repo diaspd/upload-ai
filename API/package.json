@@ -7,7 +7,7 @@
     "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "pedro_dias",
   "license": "ISC",
   "prisma": {
     "seed": "tsx prisma/seed.ts"
